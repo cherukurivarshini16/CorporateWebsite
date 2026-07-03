@@ -24,7 +24,9 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t corporatewebsite:v1 .'
+                sh 'which docker'
+sh 'docker --version'
+sh 'docker build -t corporatewebsite:v1 .'
             }
         }
 
