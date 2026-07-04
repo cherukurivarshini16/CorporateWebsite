@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: corporatewebsite
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: corporatewebsite
+  template:
+    metadata:
+      labels:
+        app: corporatewebsite
+    spec:
+      containers:
+      - name: corporatewebsite
+        image: corporatewebsite:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8081
